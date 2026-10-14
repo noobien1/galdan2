@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gali Dana Kuliner Natal - TI Pelita Nusantara IIK Bhakta</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Website Pre-Order Teknologi Informasi Natal TI Pelita Nusantara IIK Bhakta. Nikmati aneka kuliner lezat: Dimsum Mentai, Artisan Cookies, Cheesecuit, Wonton Chili Oil, Tahu Kocek, dan lainnya.">
+  <meta name="theme-color" content="#8f0500">
+  <meta property="og:title" content="Gali Dana Kuliner Natal - TI IIK Bhakta">
+  <meta property="og:description" content="Pre-Order 19-22 Oktober 2026. Pengiriman: Jumat, 23 Oktober 2026. Pesan sekarang!">
+  
+  <!-- Google Fonts: Playfair Display & Cormorant Garamond for Vintage Editorial Serif, Plus Jakarta Sans for Clean Modern Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Festive Subtle Falling Snow Canvas (Gentle & Lightweight) -->
+  <canvas id="snowCanvas" class="snow-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Sound / Snow Toggle Floating Pill -->
+  <div class="top-util-bar">
+    <button id="toggleSnowBtn" class="util-chip" title="Toggle Salju">
+      <span class="util-icon">❄️</span>
+      <span class="util-text">Salju: <strong id="snowStateLabel">Aktif</strong></span>
+    </button>
+    <button id="toggleMusicBtn" class="util-chip" title="Toggle Musik Natal">
+      <span class="util-icon">🔔</span>
+      <span class="util-text">Musik: <strong id="musicStateLabel">Aktif</strong></span>
+    </button>
+    <a href="#payment-section" class="util-chip">
+      <span class="util-icon">💳</span>
+      <span class="util-text">Metode Bayar</span>
+    </a>
+    <a href="#contact-section" class="util-chip">
+      <span class="util-icon">📞</span>
+      <span class="util-text">Hubungi Kami</span>
+    </a>
+  </div>
+
+  <!-- Main Poster Frame Container -->
+  <div class="poster-wrapper">
+    <div class="poster-inner-border">
+      
+      <!-- Vintage Corner Ornaments -->
+      <div class="corner-ornament corner-top-left" aria-hidden="true"></div>
+      <div class="corner-ornament corner-top-right" aria-hidden="true"></div>
+      <div class="corner-ornament corner-bottom-left" aria-hidden="true"></div>
+      <div class="corner-ornament corner-bottom-right" aria-hidden="true"></div>
+
+      <!-- ================= HEADER SECTION ================= -->
+      <header class="poster-header">
+        
+        <!-- Institution Branding with Logos -->
+        <div class="branding-bar">
+          <div class="logo-box">
+            <img src="logo bhakta.png" alt="Logo Institut Ilmu Kesehatan Bhakti Wiyata" class="brand-logo" id="logoBhakta">
+            <div class="brand-text">
+              <span class="brand-institution">IIK Bhakti Wiyata</span>
+              <span class="brand-sub">Institut Ilmu Kesehatan</span>
+            </div>
+          </div>
+          <div class="brand-divider">
+            <span class="star-sep">✦</span>
+          </div>
+          <div class="logo-box">
+            <img src="logo ti.png" alt="Logo TI Pelita Nusantara" class="brand-logo" id="logoTi">
+            <div class="brand-text">
+              <span class="brand-institution">TI Pelita Nusantara</span>
+              <span class="brand-sub">Teknologi Informasi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative Pine Garland SVG Garland Top -->
+        <div class="header-garland" aria-hidden="true">
+          <svg viewBox="0 0 600 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="garland-svg">
+            <path d="M0 18 Q 75 32 150 18 T 300 18 T 450 18 T 600 18" stroke="#044529" stroke-width="2.5" stroke-dasharray="6 3"/>
+            <circle cx="150" cy="22" r="5" fill="#8f0500"/>
+            <circle cx="300" cy="22" r="6" fill="#d4af37"/>
+            <circle cx="450" cy="22" r="5" fill="#8f0500"/>
+            <circle cx="75" cy="14" r="3.5" fill="#044529"/>
+            <circle cx="225" cy="14" r="3.5" fill="#044529"/>
+            <circle cx="375" cy="14" r="3.5" fill="#044529"/>
+            <circle cx="525" cy="14" r="3.5" fill="#044529"/>
+          </svg>
+        </div>
+
+        <!-- Title Section -->
+        <div class="header-title-box">
+          <p class="edition-tag">SPECIAL CHRISTMAS FUNDRAISING • 2026</p>
+          <div class="script-accent">Gali Dana</div>
+          <h1 class="main-title">KULINER NATAL</h1>
+          <div class="title-ribbon-divider">
+            <span class="ribbon-line"></span>
+            <span class="ribbon-symbol">🎄 ✦ 🎁</span>
+            <span class="ribbon-line"></span>
+          </div>
+          <p class="subtitle">Setiap pesanan Anda menjadi berkat dan dukungan nyata untuk suksesnya perayaan Natal bersama TI Pelita Nusantara IIK Bhakta.</p>
+        </div>
+
+        <!-- ================= INFORMASI PENTING (WAJIB TAMPIL JELAS) ================= -->
+        <div class="announcement-stack">
+          
+          <!-- Banner Masa Pre-Order -->
+          <div class="po-banner">
+            <div class="po-banner-icon">📅</div>
+            <div class="po-banner-content">
+              <span class="po-banner-label">MASA PRE-ORDER DIBUKA:</span>
+              <strong class="po-banner-dates">Senin, 19 Oktober 2026 s/d Kamis, 22 Oktober 2026</strong>
+            </div>
+            <span class="po-badge-pill">PO Batch 2</span>
+          </div>
+
+          <!-- SANGAT PENTING: Elemen Visual Pengiriman Pesanan (Mencolok / Eye-Catching) -->
+          <div class="delivery-highlight-box pulse-attention" id="deliveryAlert">
+            <div class="delivery-ribbon-tag">SANGAT PENTING!</div>
+            <div class="delivery-body">
+              <div class="delivery-icon-wrap">
+                <span class="delivery-anim-truck">🚚</span>
+              </div>
+              <div class="delivery-text-wrap">
+                <div class="delivery-headline">PENGIRIMAN PESANAN:</div>
+                <div class="delivery-date-highlight">JUMAT, 23 OKTOBER 2026</div>
+                <p class="delivery-note">Semua pesanan fresh dibuat & didistribusikan langsung di lingkungan kampus IIK Bhakta. Catat tanggalnya agar tidak terlewat!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <!-- ================= MENU FILTER & SEARCH ================= -->
+      <section class="menu-control-section" aria-label="Kontrol Menu">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="menuSearchInput" placeholder="Cari menu (Cookies, Cheesecuit, Dimsum...)" aria-label="Cari menu makanan">
+          <button id="clearSearchBtn" class="clear-search-btn" title="Hapus pencarian" style="display: none;">✕</button>
+        </div>
+
+        <div class="category-tabs" role="tablist">
+          <button class="cat-tab active" data-category="all" role="tab" aria-selected="true">
+            <span class="cat-name">Semua Menu</span>
+            <span class="cat-count">10</span>
+          </button>
+          <button class="cat-tab" data-category="savory" role="tab" aria-selected="false">
+            <span class="cat-name">🥟 Asin & Gurih</span>
+            <span class="cat-count">5</span>
+          </button>
+          <button class="cat-tab" data-category="sweet" role="tab" aria-selected="false">
+            <span class="cat-name">🍪 Manis & Dessert</span>
+            <span class="cat-count">5</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= MENU GRID (EDITORIAL POSTER STYLE) ================= -->
+      <main class="menu-showcase" id="menuShowcase" aria-label="Daftar Menu Makanan">
+        <div class="menu-grid" id="menuGrid">
+          <!-- Rendered dynamically by app.js for full interactivity -->
+        </div>
+      </main>
+
+      <!-- ================= PAYMENT METHOD SECTION ================= -->
+      <section class="payment-section" id="payment-section" aria-labelledby="paymentHeading">
+        <div class="section-title-wrap">
+          <span class="section-overline">INFORMASI PEMBAYARAN</span>
+          <h2 id="paymentHeading" class="section-title">Metode Pembayaran Yang Diterima</h2>
+          <div class="ornament-subline">─── ✦ ───</div>
+          <p class="section-desc">Pemesanan praktis, aman, dan dapat dikonfirmasi langsung dengan panitia.</p>
+        </div>
+
+        <div class="payment-cards-grid">
+          
+          <!-- Card 1: QRIS -->
+          <div class="payment-card payment-qris-card">
+            <div class="pay-card-header">
+              <div class="qris-badge-wrap">
+                <span class="qris-text">QRIS</span>
+                <span class="qris-sub">National Standard</span>
+              </div>
+              <span class="recommend-tag">Direkomendasikan</span>
+            </div>
+            
+            <div class="qris-visual-frame">
+              <!-- Crisp SVG QR Code Representation -->
+              <div class="qris-qr-mockup">
+                <svg viewBox="0 0 100 100" class="qr-svg" aria-label="QR Code QRIS">
+                  <rect width="100" height="100" fill="#ffffff" rx="4"/>
+                  <!-- Position Markers Top-Left -->
+                  <rect x="8" y="8" width="24" height="24" fill="#044529" rx="2"/>
+                  <rect x="12" y="12" width="16" height="16" fill="#ffffff"/>
+                  <rect x="16" y="16" width="8" height="8" fill="#044529"/>
+                  <!-- Position Markers Top-Right -->
+                  <rect x="68" y="8" width="24" height="24" fill="#044529" rx="2"/>
+                  <rect x="72" y="12" width="16" height="16" fill="#ffffff"/>
+                  <rect x="76" y="16" width="8" height="8" fill="#044529"/>
+                  <!-- Position Markers Bottom-Left -->
+                  <rect x="8" y="68" width="24" height="24" fill="#044529" rx="2"/>
+                  <rect x="12" y="72" width="16" height="16" fill="#ffffff"/>
+                  <rect x="16" y="76" width="8" height="8" fill="#044529"/>
+                  <!-- Data Modules Simulation -->
+                  <rect x="36" y="12" width="6" height="6" fill="#044529"/>
+                  <rect x="46" y="12" width="16" height="6" fill="#044529"/>
+                  <rect x="36" y="22" width="10" height="6" fill="#8f0500"/>
+                  <rect x="50" y="22" width="12" height="6" fill="#044529"/>
+                  <rect x="12" y="36" width="8" height="8" fill="#044529"/>
+                  <rect x="24" y="36" width="14" height="6" fill="#044529"/>
+                  <rect x="42" y="34" width="16" height="16" fill="#8f0500" rx="3"/>
+                  <!-- Center Heart / Star -->
+                  <polygon points="50,38 52,43 57,43 53,46 55,51 50,48 45,51 47,46 43,43 48,43" fill="#ffffff"/>
+                  <rect x="62" y="36" width="14" height="6" fill="#044529"/>
+                  <rect x="80" y="36" width="8" height="8" fill="#044529"/>
+                  <rect x="36" y="54" width="8" height="10" fill="#044529"/>
+                  <rect x="48" y="54" width="16" height="6" fill="#044529"/>
+                  <rect x="68" y="50" width="8" height="14" fill="#044529"/>
+                  <rect x="80" y="48" width="12" height="6" fill="#044529"/>
+                  <rect x="36" y="68" width="16" height="8" fill="#044529"/>
+                  <rect x="56" y="68" width="8" height="16" fill="#044529"/>
+                  <rect x="68" y="68" width="12" height="8" fill="#8f0500"/>
+                  <rect x="84" y="68" width="8" height="8" fill="#044529"/>
+                  <rect x="36" y="80" width="10" height="12" fill="#044529"/>
+                  <rect x="68" y="80" width="24" height="12" fill="#044529"/>
+                </svg>
+              </div>
+              <div class="qris-supported">
+                <span class="pay-chip">GoPay</span>
+                <span class="pay-chip">OVO</span>
+                <span class="pay-chip">DANA</span>
+                <span class="pay-chip">ShopeePay</span>
+                <span class="pay-chip">BCA Mobile</span>
+                <span class="pay-chip">Livin'</span>
+                <span class="pay-chip">Semua M-Banking</span>
+              </div>
+            </div>
+            
+            <p class="pay-instructions">Scan barcode saat konfirmasi pemesanan di WhatsApp atau kirim bukti transfer langsung ke CP.</p>
+          </div>
+
+          <!-- Card 2: Cash / COD Kampus -->
+          <div class="payment-card">
+            <div class="pay-card-header">
+              <div class="pay-type-title">
+                <span class="pay-icon-circle">💵</span>
+                <div>
+                  <h3 class="pay-title">Tunai / Cash</h3>
+                  <span class="pay-subtitle">Bayar Saat Pengiriman (COD)</span>
+                </div>
+              </div>
+            </div>
+            <p class="pay-desc-text">
+              Dapat dibayarkan secara tunai langsung kepada panitia saat pengantaran pesanan di kampus IIK Bhakta pada <strong>Jumat, 23 Oktober 2026</strong>.
+            </p>
+            <div class="pay-bullet-list">
+              <div class="pay-bullet-item">✓ Siapkan uang pas sesuai total pesanan</div>
+              <div class="pay-bullet-item">✓ Serah terima langsung di area kampus</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Pembayaran Lainnya (DLL) -->
+          <div class="payment-card">
+            <div class="pay-card-header">
+              <div class="pay-type-title">
+                <span class="pay-icon-circle">✨</span>
+                <div>
+                  <h3 class="pay-title">Lainnya / DLL</h3>
+                  <span class="pay-subtitle">Metode Lain Sesuai Kesepakatan</span>
+                </div>
+              </div>
+            </div>
+            <p class="pay-desc-text">
+              Untuk opsi pembayaran lain yang memudahkan Anda, silakan langsung tanyakan atau koordinasikan dengan panitia saat konfirmasi pemesanan via WhatsApp.
+            </p>
+            <div class="pay-bullet-list">
+              <div class="pay-bullet-item">✓ Fleksibel & praktis</div>
+              <div class="pay-bullet-item">✓ Konfirmasi langsung ke CP</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= HOW TO ORDER STEPS ================= -->
+      <section class="order-steps-section" aria-label="Cara Pemesanan">
+        <h3 class="steps-title">Cara Pemesanan Menu Galang Dana</h3>
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <h4>Lihat Menu & Varian</h4>
+            <p>Klik menu yang kamu inginkan untuk melihat foto detail & varian rasa yang tidak tercantum di poster.</p>
+          </div>
+          <div class="step-connector" aria-hidden="true">→</div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <h4>Hubungi Contact Person</h4>
+            <p>Pilih Contact Person resmi (Kak Maria atau Kak Yessy) via WhatsApp untuk pemesanan.</p>
+          </div>
+          <div class="step-connector" aria-hidden="true">→</div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <h4>Konfirmasi & Bayar</h4>
+            <p>Tentukan jumlah pesanan & bayar praktis via QRIS, Cash saat COD, dll.</p>
+          </div>
+          <div class="step-connector" aria-hidden="true">→</div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <h4>Pengiriman 23 Okt</h4>
+            <p>Makanan diantar fresh di lingkungan kampus IIK Bhakta pada Jumat, 23 Oktober 2026!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT PERSON & FOOTER SECTION ================= -->
+      <footer class="poster-footer" id="contact-section">
+        
+        <div class="cp-showcase-box">
+          <div class="cp-header">
+            <span class="cp-ornament">✦ CONTACT PERSON RESMI ✦</span>
+            <h3 class="cp-title">Pemesanan & Konfirmasi</h3>
+            <p class="cp-sub">Pemesanan dilakukan langsung dengan menghubungi nomor panitia berikut via WhatsApp:</p>
+          </div>
+
+          <div class="cp-cards-grid">
+            
+            <!-- CP 1: Maria -->
+            <a href="https://wa.me/6282228764048?text=Halo%20Kak%20Maria,%20saya%20ingin%20memesan%20menu%20Galang%20Dana%20Natal%20TI%20IIK%20Bhakta" target="_blank" rel="noopener noreferrer" class="cp-contact-card" id="cpMariaCard">
+              <div class="cp-avatar">
+                <span class="cp-letter">M</span>
+                <span class="wa-badge">💬</span>
+              </div>
+              <div class="cp-info">
+                <span class="cp-role">Panitia Pemesanan</span>
+                <h4 class="cp-name">Maria</h4>
+                <div class="cp-phone-number">+62 822-2876-4048</div>
+              </div>
+              <div class="cp-action-pill">
+                <span>Chat WhatsApp</span>
+                <span class="arr-icon">→</span>
+              </div>
+            </a>
+
+            <!-- CP 2: Yessy -->
+            <a href="https://wa.me/6281977182071?text=Halo%20Kak%20Yessy,%20saya%20ingin%20memesan%20menu%20Galang%20Dana%20Natal%20TI%20IIK%20Bhakta" target="_blank" rel="noopener noreferrer" class="cp-contact-card" id="cpYessyCard">
+              <div class="cp-avatar">
+                <span class="cp-letter">Y</span>
+                <span class="wa-badge">💬</span>
+              </div>
+              <div class="cp-info">
+                <span class="cp-role">Panitia Pemesanan</span>
+                <h4 class="cp-name">Yessy</h4>
+                <div class="cp-phone-number">+62 819-7718-2071</div>
+              </div>
+              <div class="cp-action-pill">
+                <span>Chat WhatsApp</span>
+                <span class="arr-icon">→</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Footer Bottom Legal & Campus Credits -->
+        <div class="footer-legal">
+          <div class="footer-logos">
+            <img src="logo bhakta.png" alt="Logo IIK Bhakti Wiyata" class="footer-mini-logo">
+            <span class="f-dot">•</span>
+            <img src="logo ti.png" alt="Logo TI Pelita Nusantara" class="footer-mini-logo">
+          </div>
+          <p class="footer-credits">
+            Program Teknologi Informasi Natal 2026 • <strong>TI Pelita Nusantara IIK Bhakti Wiyata</strong>
+          </p>
+        </div>
+
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL: MENU DETAIL & VARIANT POP-UP ================= -->
+  <div class="modal-backdrop" id="menuModalBackdrop" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modalItemTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeMenuModalBtn" title="Tutup pop-up" aria-label="Tutup pop-up">✕</button>
+      
+      <div class="modal-scroll-body">
+        
+        <!-- Modal Image Showcase with Smooth Variant Switching -->
+        <div class="modal-image-wrap">
+          <img src="" alt="" id="modalItemImage" class="modal-food-img">
+          <div class="modal-img-badges">
+            <span class="modal-portion-tag" id="modalPortionTag">1 Porsi</span>
+            <span class="modal-category-tag" id="modalCategoryTag">Kuliner Natal</span>
+          </div>
+        </div>
+
+        <!-- Modal Info Details -->
+        <div class="modal-info-content">
+          <div class="modal-header-line">
+            <div>
+              <span class="modal-sub-brand" id="modalSubBrand">IIK Bhakta • Galang Dana</span>
+              <h3 class="modal-title" id="modalItemTitle">Nama Menu</h3>
+            </div>
+            <div class="modal-price-wrap">
+              <span class="modal-price-label">Harga</span>
+              <strong class="modal-price-val" id="modalItemPrice">Rp 0</strong>
+            </div>
+          </div>
+
+          <p class="modal-description" id="modalItemDesc">Deskripsi menu...</p>
+
+          <!-- DYNAMIC VARIANT SELECTOR (HANYA MUNCUL PADA MENU DENGAN VARIAN) -->
+          <div class="modal-variant-section" id="modalVariantSection" style="display: none;">
+            <div class="variant-sec-header">
+              <span class="var-icon">✨</span>
+              <label class="variant-label">Pilih Varian Rasa:</label>
+            </div>
+            <div class="variant-options-grid" id="variantOptionsGrid">
+              <!-- Variant pills inserted via JS -->
+            </div>
+            <p class="variant-hint" id="variantHintText">Klik varian rasa di atas untuk melihat foto dan harganya.</p>
+          </div>
+
+          <!-- Portion / Piece Info Note -->
+          <div class="portion-detail-notice" id="portionDetailNotice">
+            <span class="icon">📦</span>
+            <span class="text" id="portionDetailText">Porsi freshly prepared</span>
+          </div>
+
+          <!-- DIRECT WHATSAPP ORDER / CONTACT PROMPT -->
+          <div class="modal-order-prompt-box">
+            <div class="prompt-header">
+              <span class="prompt-badge">Tertarik Mencoba Menu Ini?</span>
+              <h4 class="prompt-title">Pesan Langsung via WhatsApp</h4>
+              <p class="prompt-text">Silakan hubungi Contact Person kami di bawah untuk memesan menu ini. Teks pesan otomatis rapi & langsung terisi!</p>
+            </div>
+
+            <div class="modal-cp-buttons">
+              <button type="button" class="btn-modal-wa btn-wa-maria" id="modalOrderMariaBtn">
+                <span class="wa-ico">💬</span>
+                <div class="modal-btn-txt">
+                  <span class="btn-sub">Pesan ke</span>
+                  <strong>Kak Maria (+62 822-2876-4048)</strong>
+                </div>
+              </button>
+              <button type="button" class="btn-modal-wa btn-wa-yessy" id="modalOrderYessyBtn">
+                <span class="wa-ico">💬</span>
+                <div class="modal-btn-txt">
+                  <span class="btn-sub">Pesan ke</span>
+                  <strong>Kak Yessy (+62 819-7718-2071)</strong>
+                </div>
+              </button>
+            </div>
+            <p class="modal-cp-note">📍 Pengiriman serentak: <strong>Jumat, 23 Oktober 2026</strong> di kampus IIK Bhakta.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast-notification" id="toastNotification" aria-live="polite"></div>
+
+  <!-- JavaScript Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
