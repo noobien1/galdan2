@@ -590,60 +590,96 @@ function initSnowEffect() {
   }
 }
 
-// ================= CHRISTMAS MUSIC (MP3) =================
+// ================= CHRISTMAS MUSIC (MP3) & WELCOME SPLASH =================
 function initChristmasMusic() {
   const audioFile = "Christmas Background Music For Videos _ Royalty Free - _Tis the Season_.mp3";
   const audio = new Audio(audioFile);
   audio.loop = true;
-  audio.volume = 0.4; // 40% volume — pleasant background level
+  audio.volume = 0.4; // 40% volume: pleasant background level
   audio.preload = "auto";
 
-  let playing = true;
-  let started = false;
+  let playing = false;
 
-  function startMusic() {
-    if (started) return;
+  const splashOverlay = document.getElementById("welcomeSplashOverlay");
+  const btnWithMusic = document.getElementById("btnOpenPosterWithMusic");
+  const btnMuted = document.getElementById("btnOpenPosterMuted");
+  const toggleBtn = document.getElementById("toggleMusicBtn");
+  const musicLabel = document.getElementById("musicStateLabel");
+
+  function updateMusicUI(active) {
+    if (musicLabel) {
+      musicLabel.textContent = active ? "Aktif" : "Mati";
+    }
+  }
+
+  // Set initial state
+  updateMusicUI(false);
+
+  function startAudio() {
+    playing = true;
+    audio.volume = 0.4;
     audio.play().then(() => {
-      started = true;
-      console.log("[Music] ♪ Now playing: 'Tis the Season");
-    }).catch(() => {
-      // Autoplay blocked — will retry on next interaction
-      console.log("[Music] Autoplay blocked, waiting for interaction...");
+      updateMusicUI(true);
+      console.log("[Music] Playing: 'Tis the Season");
+    }).catch((err) => {
+      console.warn("[Music] Audio play failed:", err);
+      playing = false;
+      updateMusicUI(false);
     });
   }
 
-  // Try autoplay immediately
-  startMusic();
+  function pauseAudio() {
+    audio.pause();
+    playing = false;
+    updateMusicUI(false);
+    console.log("[Music] Music paused");
+  }
 
-  // Fallback: start on first user interaction (browser policy)
-  function onFirstInteract() {
-    if (!started && playing) {
-      audio.play().then(() => {
-        started = true;
-        console.log("[Music] ♪ Started after user interaction");
-      }).catch(err => console.warn("[Music] Play failed:", err));
+  function closeSplash(shouldPlayMusic) {
+    if (splashOverlay) {
+      splashOverlay.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+    if (shouldPlayMusic) {
+      startAudio();
+    } else {
+      pauseAudio();
     }
   }
-  ["click", "touchstart", "scroll", "keydown"].forEach(ev =>
-    document.addEventListener(ev, onFirstInteract, { passive: true })
-  );
 
-  // Toggle button
-  const btn = document.getElementById("toggleMusicBtn");
-  const lbl = document.getElementById("musicStateLabel");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      playing = !playing;
-      if (lbl) lbl.textContent = playing ? "Aktif" : "Mati";
+  // Prevent background scrolling while splash overlay is displayed
+  if (splashOverlay && !splashOverlay.classList.contains("hidden")) {
+    document.body.style.overflow = "hidden";
+  }
+
+  // Button: Buka Poster & Putar Musik
+  if (btnWithMusic) {
+    btnWithMusic.addEventListener("click", () => {
+      closeSplash(true);
+    });
+  }
+
+  // Button: Buka poster tanpa musik
+  if (btnMuted) {
+    btnMuted.addEventListener("click", () => {
+      closeSplash(false);
+    });
+  }
+
+  // Escape key closes splash screen if open
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && splashOverlay && !splashOverlay.classList.contains("hidden")) {
+      closeSplash(false);
+    }
+  });
+
+  // Toggle button in top utility bar
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
       if (playing) {
-        audio.volume = 0.4;
-        audio.play().then(() => {
-          started = true;
-          console.log("[Music] ♪ Music resumed");
-        });
+        pauseAudio();
       } else {
-        audio.pause();
-        console.log("[Music] Music paused");
+        startAudio();
       }
     });
   }

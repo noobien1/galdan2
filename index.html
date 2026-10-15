@@ -20,6 +20,65 @@
 </head>
 <body>
 
+  <!-- ================= WELCOME POSTER SPLASH OVERLAY ================= -->
+  <div id="welcomeSplashOverlay" class="welcome-splash-overlay" role="dialog" aria-modal="true" aria-labelledby="splashTitle">
+    <div class="splash-card">
+      <!-- Festive Corner Ornaments -->
+      <div class="splash-corner splash-corner-tl" aria-hidden="true"></div>
+      <div class="splash-corner splash-corner-tr" aria-hidden="true"></div>
+      <div class="splash-corner splash-corner-bl" aria-hidden="true"></div>
+      <div class="splash-corner splash-corner-br" aria-hidden="true"></div>
+
+      <!-- Holiday Top Badge -->
+      <div class="splash-top-badge">
+        <span class="splash-badge-ico">🎄</span>
+        <span>SPECIAL CHRISTMAS FUNDRAISING</span>
+      </div>
+
+      <!-- Minimalist School Logos (Icons Only) -->
+      <div class="splash-logos-row" aria-label="Logo Institusi">
+        <img src="logo bhakta.png" alt="Logo Institut Ilmu Kesehatan Bhakti Wiyata" class="splash-brand-logo">
+        <span class="splash-logo-star" aria-hidden="true">✦</span>
+        <img src="logo ti.png" alt="Logo TI Pelita Nusantara" class="splash-brand-logo">
+      </div>
+
+      <div class="splash-script-text">Undangan & Poster Kuliner</div>
+      <h2 id="splashTitle" class="splash-main-title">Gali Dana Kuliner Natal</h2>
+      <p class="splash-subtitle">Teknologi Informasi • IIK Bhakti Wiyata</p>
+
+      <div class="splash-divider-bar" aria-hidden="true">
+        <span class="splash-divider-line"></span>
+        <span class="splash-divider-decor">❄️ ✦ 🔔</span>
+        <span class="splash-divider-line"></span>
+      </div>
+
+      <p class="splash-message">
+        Selamat datang! Nikmati pilihan menu pre-order lezat untuk mendukung perayaan Natal kami, lengkap dengan alunan musik hangat.
+      </p>
+
+      <!-- Interactive Buttons -->
+      <div class="splash-btn-group">
+        <button id="btnOpenPosterWithMusic" class="btn-splash-primary" type="button">
+          <span class="btn-splash-icon">🔔</span>
+          <span class="btn-splash-copy">
+            <strong class="btn-splash-headline">Buka Poster & Putar Musik</strong>
+            <small class="btn-splash-subline">Mulai dengan iringan musik Natal</small>
+          </span>
+          <span class="btn-splash-sparkle" aria-hidden="true">✨</span>
+        </button>
+
+        <button id="btnOpenPosterMuted" class="btn-splash-secondary" type="button">
+          Buka poster tanpa musik
+        </button>
+      </div>
+
+      <div class="splash-info-footer">
+        <span class="splash-info-icon">📅</span>
+        <span>PO: 19-22 Okt 2026 • Distribusi: Jumat, 23 Okt 2026</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Festive Subtle Falling Snow Canvas (Gentle & Lightweight) -->
   <canvas id="snowCanvas" class="snow-canvas" aria-hidden="true"></canvas>
 
@@ -31,7 +90,7 @@
     </button>
     <button id="toggleMusicBtn" class="util-chip" title="Toggle Musik Natal">
       <span class="util-icon">🔔</span>
-      <span class="util-text">Musik: <strong id="musicStateLabel">Aktif</strong></span>
+      <span class="util-text">Musik: <strong id="musicStateLabel">Mati</strong></span>
     </button>
     <a href="#payment-section" class="util-chip">
       <span class="util-icon">💳</span>
@@ -56,24 +115,16 @@
       <!-- ================= HEADER SECTION ================= -->
       <header class="poster-header">
         
-        <!-- Institution Branding with Logos -->
-        <div class="branding-bar">
+        <!-- Institution Branding with Logos Only (Minimalist, No Surrounding Text) -->
+        <div class="branding-bar branding-bar-minimal" aria-label="Logo Institusi Sekolah">
           <div class="logo-box">
             <img src="logo bhakta.png" alt="Logo Institut Ilmu Kesehatan Bhakti Wiyata" class="brand-logo" id="logoBhakta">
-            <div class="brand-text">
-              <span class="brand-institution">IIK Bhakti Wiyata</span>
-              <span class="brand-sub">Institut Ilmu Kesehatan</span>
-            </div>
           </div>
-          <div class="brand-divider">
+          <div class="brand-divider" aria-hidden="true">
             <span class="star-sep">✦</span>
           </div>
           <div class="logo-box">
             <img src="logo ti.png" alt="Logo TI Pelita Nusantara" class="brand-logo" id="logoTi">
-            <div class="brand-text">
-              <span class="brand-institution">TI Pelita Nusantara</span>
-              <span class="brand-sub">Teknologi Informasi</span>
-            </div>
           </div>
         </div>
 
@@ -243,7 +294,7 @@
           </div>
 
           <!-- Card 2: Cash / COD Kampus -->
-          <div class="payment-card">
+          <div class="payment-card payment-cash-card">
             <div class="pay-card-header">
               <div class="pay-type-title">
                 <span class="pay-icon-circle">💵</span>
@@ -252,33 +303,18 @@
                   <span class="pay-subtitle">Bayar Saat Pengiriman (COD)</span>
                 </div>
               </div>
+              <span class="cash-badge">Kalo Bisa Uang Pas</span>
             </div>
             <p class="pay-desc-text">
               Dapat dibayarkan secara tunai langsung kepada panitia saat pengantaran pesanan di kampus IIK Bhakta pada <strong>Jumat, 23 Oktober 2026</strong>.
             </p>
+            <div class="cash-notice-box">
+              <span class="cash-notice-icon">💡</span>
+              <span class="cash-notice-text">Catatan: <strong>Kalo bisa uang pas</strong> ya, untuk mempercepat dan mempermudah transaksi saat serah terima pesanan.</span>
+            </div>
             <div class="pay-bullet-list">
-              <div class="pay-bullet-item">✓ Siapkan uang pas sesuai total pesanan</div>
+              <div class="pay-bullet-item">✓ Disarankan siapkan uang pas sesuai nominal</div>
               <div class="pay-bullet-item">✓ Serah terima langsung di area kampus</div>
-            </div>
-          </div>
-
-          <!-- Card 3: Pembayaran Lainnya (DLL) -->
-          <div class="payment-card">
-            <div class="pay-card-header">
-              <div class="pay-type-title">
-                <span class="pay-icon-circle">✨</span>
-                <div>
-                  <h3 class="pay-title">Lainnya / DLL</h3>
-                  <span class="pay-subtitle">Metode Lain Sesuai Kesepakatan</span>
-                </div>
-              </div>
-            </div>
-            <p class="pay-desc-text">
-              Untuk opsi pembayaran lain yang memudahkan Anda, silakan langsung tanyakan atau koordinasikan dengan panitia saat konfirmasi pemesanan via WhatsApp.
-            </p>
-            <div class="pay-bullet-list">
-              <div class="pay-bullet-item">✓ Fleksibel & praktis</div>
-              <div class="pay-bullet-item">✓ Konfirmasi langsung ke CP</div>
             </div>
           </div>
 
@@ -304,7 +340,7 @@
           <div class="step-item">
             <div class="step-num">3</div>
             <h4>Konfirmasi & Bayar</h4>
-            <p>Tentukan jumlah pesanan & bayar praktis via QRIS, Cash saat COD, dll.</p>
+            <p>Tentukan jumlah pesanan & bayar praktis via QRIS atau Cash saat COD (kalo bisa uang pas).</p>
           </div>
           <div class="step-connector" aria-hidden="true">→</div>
           <div class="step-item">
