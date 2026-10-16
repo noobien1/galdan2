@@ -92,6 +92,10 @@
       <span class="util-icon">🔔</span>
       <span class="util-text">Musik: <strong id="musicStateLabel">Mati</strong></span>
     </button>
+    <a href="#serba13kSection" class="util-chip util-chip-highlight" title="Pilihan Menu Serba 13K">
+      <span class="util-icon">⭐</span>
+      <span class="util-text">Serba 13K</span>
+    </a>
     <a href="#payment-section" class="util-chip">
       <span class="util-icon">💳</span>
       <span class="util-text">Metode Bayar</span>
@@ -183,6 +187,22 @@
             </div>
           </div>
 
+          <!-- HIGHLIGHT PROMO: MENU SERBA 13K -->
+          <div class="promo-13k-banner" id="promo13kBanner">
+            <div class="promo-13k-badge">
+              <span class="promo-badge-star" aria-hidden="true">✦</span>
+              <span>SERBA HEMAT</span>
+            </div>
+            <div class="promo-13k-body">
+              <div class="promo-13k-headline">Zona Menu Serba 13K!</div>
+              <p class="promo-13k-sub">Ada 6 pilihan menu favorit gurih & manis dengan satu harga pas: hanya <strong>Rp 13.000 / porsi</strong>.</p>
+            </div>
+            <a href="#serba13kSection" class="btn-promo-13k" id="btnScroll13k">
+              <span>Lihat Menu (6)</span>
+              <span class="btn-arrow" aria-hidden="true">↓</span>
+            </a>
+          </div>
+
         </div>
       </header>
 
@@ -190,30 +210,35 @@
       <section class="menu-control-section" aria-label="Kontrol Menu">
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
-          <input type="text" id="menuSearchInput" placeholder="Cari menu (Cookies, Cheesecuit, Dimsum...)" aria-label="Cari menu makanan">
+          <input type="text" id="menuSearchInput" placeholder="Cari menu (Tahu Kocek, Samyang, Cookies, Cheesecuit...)" aria-label="Cari menu makanan">
           <button id="clearSearchBtn" class="clear-search-btn" title="Hapus pencarian" style="display: none;">✕</button>
         </div>
 
         <div class="category-tabs" role="tablist">
           <button class="cat-tab active" data-category="all" role="tab" aria-selected="true">
             <span class="cat-name">Semua Menu</span>
-            <span class="cat-count">10</span>
+            <span class="cat-count" id="countAll">10</span>
+          </button>
+          <button class="cat-tab cat-tab-13k" data-category="13k" role="tab" aria-selected="false">
+            <span class="cat-icon">⭐</span>
+            <span class="cat-name">Serba 13K</span>
+            <span class="cat-count" id="count13k">6</span>
           </button>
           <button class="cat-tab" data-category="savory" role="tab" aria-selected="false">
             <span class="cat-name">🥟 Asin & Gurih</span>
-            <span class="cat-count">5</span>
+            <span class="cat-count" id="countSavory">5</span>
           </button>
           <button class="cat-tab" data-category="sweet" role="tab" aria-selected="false">
             <span class="cat-name">🍪 Manis & Dessert</span>
-            <span class="cat-count">5</span>
+            <span class="cat-count" id="countSweet">5</span>
           </button>
         </div>
       </section>
 
-      <!-- ================= MENU GRID (EDITORIAL POSTER STYLE) ================= -->
+      <!-- ================= MENU SHOWCASE (SERBA 13K & MENU LAINNYA) ================= -->
       <main class="menu-showcase" id="menuShowcase" aria-label="Daftar Menu Makanan">
-        <div class="menu-grid" id="menuGrid">
-          <!-- Rendered dynamically by app.js for full interactivity -->
+        <div id="menuContainer">
+          <!-- Rendered dynamically by app.js -->
         </div>
       </main>
 

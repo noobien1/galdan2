@@ -1984,6 +1984,430 @@ body::before {
   transform: translateX(-50%) translateY(0);
 }
 
+/* ================= SERBA 13K PROMO & SECTION STYLES ================= */
+.util-chip-highlight {
+  border-color: var(--gold-accent) !important;
+  background: rgba(197, 155, 39, 0.16) !important;
+  font-weight: 700;
+}
+
+.promo-13k-banner {
+  background: linear-gradient(135deg, #fff8e7 0%, #ffeed1 100%);
+  border: 2px dashed var(--gold-accent);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.2rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 3px 10px rgba(86, 36, 0, 0.05);
+  transition: var(--trans-fast);
+}
+
+.promo-13k-banner:hover {
+  border-color: var(--accent-red);
+  box-shadow: 0 5px 14px rgba(143, 5, 0, 0.08);
+}
+
+.promo-13k-badge {
+  background: var(--accent-red);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(143, 5, 0, 0.25);
+}
+
+.promo-badge-star {
+  color: var(--gold-light);
+  font-size: 0.85rem;
+}
+
+.promo-13k-body {
+  flex: 1;
+  min-width: 220px;
+}
+
+.promo-13k-headline {
+  font-family: var(--font-serif-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--garland-green);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.promo-13k-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.btn-promo-13k {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: var(--accent-red);
+  color: #ffffff !important;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  box-shadow: 0 2px 6px rgba(143, 5, 0, 0.25);
+  transition: var(--trans-fast);
+  white-space: nowrap;
+}
+
+.btn-promo-13k:hover {
+  background: var(--accent-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(143, 5, 0, 0.3);
+}
+
+.btn-promo-13k:active {
+  transform: translateY(0);
+}
+
+/* Category Tab 13K Highlight */
+.cat-tab-13k {
+  border-color: var(--gold-accent) !important;
+  background: linear-gradient(135deg, var(--card-bg) 0%, #fff2d6 100%) !important;
+  font-weight: 700 !important;
+}
+
+.cat-tab-13k .cat-icon {
+  color: var(--gold-accent);
+  font-size: 0.88rem;
+}
+
+.cat-tab-13k.active {
+  background: var(--garland-green) !important;
+  border-color: var(--garland-green) !important;
+  color: #fffbe9 !important;
+}
+
+.cat-tab-13k.active .cat-icon {
+  color: var(--gold-light);
+}
+
+/* Dedicated Serba 13K Section */
+.serba-13k-section {
+  background: var(--card-bg-subtle);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem 2rem;
+  margin-bottom: 2.75rem;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(86, 36, 0, 0.05);
+  scroll-margin-top: 24px;
+}
+
+.serba-13k-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.serba-13k-top-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.serba-13k-top-tag .tag-star {
+  color: var(--gold-accent);
+  font-size: 0.85rem;
+}
+
+.serba-13k-title {
+  font-family: var(--font-serif-heading);
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: var(--garland-green);
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.serba-13k-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.55rem auto 0.75rem;
+  max-width: 260px;
+}
+
+.serba-13k-divider .div-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.serba-13k-divider .div-ornament {
+  font-size: 0.95rem;
+  color: var(--gold-accent);
+}
+
+.serba-13k-sub {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 0.95rem;
+  line-height: 1.45;
+}
+
+.serba-13k-feature-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+}
+
+.feat-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-color);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+  box-shadow: 0 1px 3px rgba(86, 36, 0, 0.04);
+}
+
+/* Badge 13K Highlight on Food Cards */
+.badge-13k {
+  background: linear-gradient(135deg, var(--garland-green) 0%, #085e37 100%) !important;
+  border: 1.5px solid var(--gold-accent) !important;
+  color: #fffbe9 !important;
+  box-shadow: 0 2px 6px rgba(4, 69, 41, 0.35) !important;
+  font-weight: 800;
+}
+
+.card-serba-pill {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: var(--accent-red);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.food-card-13k:hover {
+  border-color: var(--accent-red);
+  box-shadow: 0 6px 0 var(--border-color);
+}
+
+/* Other Menu Section */
+.other-menu-section {
+  margin-bottom: 2.5rem;
+  padding-top: 0.5rem;
+}
+
+.other-menu-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.other-menu-top-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--garland-green);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.other-menu-top-tag .tag-star {
+  color: var(--gold-accent);
+  font-size: 0.85rem;
+}
+
+.other-menu-title {
+  font-family: var(--font-serif-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.other-menu-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.5rem auto 0.75rem;
+  max-width: 240px;
+}
+
+.other-menu-divider .div-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.other-menu-divider .div-ornament {
+  font-size: 0.95rem;
+  color: var(--accent-red);
+}
+
+.other-menu-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+/* Category Filter Header (Savory & Sweet) */
+.category-header-wrap {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.category-overline {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--garland-green);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.category-title {
+  font-family: var(--font-serif-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.category-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0.35rem auto 0;
+  line-height: 1.4;
+}
+
+/* Search Results Feedback */
+.search-results-banner {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--garland-green);
+}
+
+.menu-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3.5rem 1.25rem;
+  color: var(--text-muted);
+}
+
+.menu-empty-state .empty-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.65rem;
+}
+
+.menu-empty-state .empty-title {
+  font-family: var(--font-serif-heading);
+  color: var(--text-main);
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.menu-empty-state .empty-desc {
+  font-size: 0.88rem;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* Smooth jump highlight animation */
+@keyframes sectionPulse {
+  0% {
+    box-shadow: 0 4px 16px rgba(86, 36, 0, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(143, 5, 0, 0.35), 0 0 0 3px var(--accent-red);
+  }
+  100% {
+    box-shadow: 0 4px 16px rgba(86, 36, 0, 0.05);
+  }
+}
+
+.section-highlight-pulse {
+  animation: sectionPulse 1.6s ease-in-out;
+}
+
+/* Mobile responsive refinements for Serba 13K */
+@media (max-width: 600px) {
+  .promo-13k-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+  }
+  
+  .btn-promo-13k {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .serba-13k-section {
+    padding: 1.25rem 0.85rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .serba-13k-title {
+    font-size: 1.6rem;
+  }
+  
+  .other-menu-title {
+    font-size: 1.45rem;
+  }
+  
+  .feat-pill {
+    font-size: 0.74rem;
+    padding: 0.25rem 0.55rem;
+  }
+}
+
 /* ================= PRINT STYLES ================= */
 @media print {
   body {
@@ -1991,7 +2415,7 @@ body::before {
     color: #000000;
     padding: 0;
   }
-  .snow-canvas, .top-util-bar, .modal-backdrop, .menu-control-section {
+  .snow-canvas, .top-util-bar, .modal-backdrop, .menu-control-section, .promo-13k-banner {
     display: none !important;
   }
   .poster-wrapper {

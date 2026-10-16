@@ -237,73 +237,235 @@ document.addEventListener("DOMContentLoaded", () => {
   initChristmasMusic();
 });
 
+// Helper function to escape HTML in search feedback
+function escapeHtml(str) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+// Helper: Render kartu individual menu makanan
+function renderFoodCard(item) {
+  const hasVariants = Boolean(item.variants && item.variants.length > 0);
+  const displayBadge = item.priceRange || item.priceBadge;
+  const cardImgSrc = item.img || item.image;
+  const is13k = item.price === 13000;
+  
+  // Mini preview of variants if available
+  let variantsPreviewHtml = "";
+  if (hasVariants) {
+    variantsPreviewHtml = `
+      <div class="card-variants-preview">
+        ${item.variants.map(v => `<span class="mini-variant-tag">${v.name}</span>`).join("")}
+      </div>
+    `;
+  }
+
+  return `
+    <article class="food-card ${is13k ? 'food-card-13k' : ''}" 
+             onclick="openMenuModal('${item.id}')" 
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openMenuModal('${item.id}');}" 
+             role="button" 
+             tabindex="0" 
+             aria-label="Lihat detail ${item.title}, harga ${displayBadge}">
+      
+      <div class="food-card-visual">
+        <img src="${cardImgSrc}" alt="${item.title}" class="food-card-img" loading="lazy">
+        
+        <span class="card-price-badge ${is13k ? 'badge-13k' : ''}">${is13k ? '⭐ 13K' : displayBadge}</span>
+        <span class="card-portion-badge">${item.portion}</span>
+        
+        ${hasVariants ? `<span class="card-variant-badge">✨ ${item.variants.length} Varian</span>` : ""}
+        ${is13k ? `<span class="card-serba-pill">Serba 13K</span>` : ""}
+      </div>
+
+      <div class="food-card-content">
+        <span class="card-cat-tag">${item.categoryLabel}</span>
+        <h3 class="food-card-title">${item.title}</h3>
+        <p class="food-card-desc">${item.description}</p>
+        
+        ${variantsPreviewHtml}
+
+        <button type="button" class="food-card-btn" onclick="event.stopPropagation(); openMenuModal('${item.id}')">
+          <span>${hasVariants ? "Lihat Detail & Varian Rasa" : "Lihat Detail Menu"}</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+    </article>
+  `;
+}
+
 // ================= RENDER MENU GRID =================
 function renderMenuGrid() {
-  const container = document.getElementById("menuGrid");
+  const container = document.getElementById("menuContainer") || document.getElementById("menuGrid");
   if (!container) return;
 
-  const filtered = MENU_DATA.filter(item => {
-    const matchesCategory = (activeCategory === "all") || (item.category === activeCategory);
-    const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          (item.variants && item.variants.some(v => v.name.toLowerCase().includes(searchQuery.toLowerCase())));
-    return matchesCategory && matchesSearch;
-  });
+  // Search filter query handling
+  if (searchQuery !== "") {
+    const queryLower = searchQuery.toLowerCase();
+    const filtered = MENU_DATA.filter(item => {
+      const matchesSearch = item.title.toLowerCase().includes(queryLower) ||
+                            item.description.toLowerCase().includes(queryLower) ||
+                            (item.variants && item.variants.some(v => v.name.toLowerCase().includes(queryLower)));
+      
+      if (activeCategory === "13k") return matchesSearch && item.price === 13000;
+      if (activeCategory === "savory") return matchesSearch && item.category === "savory";
+      if (activeCategory === "sweet") return matchesSearch && item.category === "sweet";
+      return matchesSearch;
+    });
 
-  if (filtered.length === 0) {
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="menu-empty-state">
+          <div class="empty-icon">🔍</div>
+          <h3 class="empty-title">Menu Tidak Ditemukan</h3>
+          <p class="empty-desc">Coba gunakan kata kunci lain seperti "Tahu Kocek", "Samyang", "Cookies", atau "Cheesecuit".</p>
+        </div>
+      `;
+      return;
+    }
+
     container.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
-        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
-        <h3 style="font-family: var(--font-serif-heading); color: var(--text-main);">Menu Tidak Ditemukan</h3>
-        <p style="font-size: 0.85rem;">Coba gunakan kata kunci lain seperti "Cookies", "Dimsum", atau "Cheesecuit".</p>
+      <div class="search-results-banner">
+        <span class="search-results-label">Hasil pencarian untuk "${escapeHtml(searchQuery)}" (${filtered.length} menu):</span>
+      </div>
+      <div class="menu-grid">
+        ${filtered.map(renderFoodCard).join("")}
       </div>
     `;
     return;
   }
 
-  container.innerHTML = filtered.map(item => {
-    const hasVariants = Boolean(item.variants && item.variants.length > 0);
-    const displayBadge = item.priceRange || item.priceBadge;
-    const cardImgSrc = item.img || item.image;
-    
-    // Mini preview of variants if available
-    let variantsPreviewHtml = "";
-    if (hasVariants) {
-      variantsPreviewHtml = `
-        <div class="card-variants-preview">
-          ${item.variants.map(v => `<span class="mini-variant-tag">${v.name}</span>`).join("")}
-        </div>
-      `;
-    }
-
-    return `
-      <article class="food-card" onclick="openMenuModal('${item.id}')" role="button" tabindex="0" aria-label="Lihat detail ${item.title}">
-        
-        <div class="food-card-visual">
-          <img src="${cardImgSrc}" alt="${item.title}" class="food-card-img" loading="eager">
-          
-          <span class="card-price-badge">${displayBadge}</span>
-          <span class="card-portion-badge">${item.portion}</span>
-          
-          ${hasVariants ? `<span class="card-variant-badge">✨ ${item.variants.length} Varian</span>` : ""}
-        </div>
-
-        <div class="food-card-content">
-          <span class="card-cat-tag">${item.categoryLabel}</span>
-          <h3 class="food-card-title">${item.title}</h3>
-          <p class="food-card-desc">${item.description}</p>
-          
-          ${variantsPreviewHtml}
-
-          <button type="button" class="food-card-btn" onclick="event.stopPropagation(); openMenuModal('${item.id}')">
-            <span>${hasVariants ? "Lihat Detail & Varian Rasa" : "Lihat Detail Menu"}</span>
-            <span>→</span>
-          </button>
+  // Category: Serba 13K only
+  if (activeCategory === "13k") {
+    const items13k = MENU_DATA.filter(item => item.price === 13000);
+    container.innerHTML = `
+      <section class="serba-13k-section active-filter-section" id="serba13kSection" aria-labelledby="headingSerba13k">
+        <div class="serba-13k-header">
+          <div class="serba-13k-top-tag">
+            <span class="tag-star" aria-hidden="true">✦</span>
+            <span>PILIHAN FAVORIT MAHASISWA</span>
+            <span class="tag-star" aria-hidden="true">✦</span>
+          </div>
+          <h2 id="headingSerba13k" class="serba-13k-title">Menu Serba 13K</h2>
+          <div class="serba-13k-divider" aria-hidden="true">
+            <span class="div-line"></span>
+            <span class="div-ornament">🎄 ✦ 🔔</span>
+            <span class="div-line"></span>
+          </div>
+          <p class="serba-13k-sub">
+            Nikmati aneka pilihan camilan gurih dan manis lezat dengan satu harga hemat: <strong>Rp 13.000 per porsi</strong>!
+          </p>
+          <div class="serba-13k-feature-strip">
+            <span class="feat-pill">🥟 Tahu Kocek</span>
+            <span class="feat-pill">🍤 Udang Rambutan</span>
+            <span class="feat-pill">🍜 Samyang Roll</span>
+            <span class="feat-pill">🍌 Pisang Coklat</span>
+            <span class="feat-pill">🧀 Cheeseroll</span>
+            <span class="feat-pill">🥗 Salad Buah</span>
+          </div>
         </div>
 
-      </article>
+        <div class="menu-grid">
+          ${items13k.map(renderFoodCard).join("")}
+        </div>
+      </section>
     `;
-  }).join("");
+    return;
+  }
+
+  // Category: Asin & Gurih only
+  if (activeCategory === "savory") {
+    const savoryItems = MENU_DATA.filter(item => item.category === "savory");
+    container.innerHTML = `
+      <div class="category-header-wrap">
+        <span class="category-overline">KATEGORI ASIN & GURIH</span>
+        <h2 class="category-title">Menu Asin & Gurih</h2>
+        <p class="category-desc">Aneka dimsum mentai, wonton chili oil, samyang roll, dan camilan gurih renyah.</p>
+      </div>
+      <div class="menu-grid">
+        ${savoryItems.map(renderFoodCard).join("")}
+      </div>
+    `;
+    return;
+  }
+
+  // Category: Manis & Dessert only
+  if (activeCategory === "sweet") {
+    const sweetItems = MENU_DATA.filter(item => item.category === "sweet");
+    container.innerHTML = `
+      <div class="category-header-wrap">
+        <span class="category-overline">KATEGORI MANIS & DESSERT</span>
+        <h2 class="category-title">Menu Manis & Dessert</h2>
+        <p class="category-desc">Pilihan cheesecuit box, soft-baked cookies, pisang coklat lumer, cheeseroll, dan salad buah segar.</p>
+      </div>
+      <div class="menu-grid">
+        ${sweetItems.map(renderFoodCard).join("")}
+      </div>
+    `;
+    return;
+  }
+
+  // Category: Semua Menu (Default view with dedicated Serba 13K section & Other Menu section)
+  const items13k = MENU_DATA.filter(item => item.price === 13000);
+  const otherItems = MENU_DATA.filter(item => item.price !== 13000);
+
+  container.innerHTML = `
+    <!-- ================= BAGIAN MENU SERBA 13K ================= -->
+    <section class="serba-13k-section" id="serba13kSection" aria-labelledby="headingSerba13k">
+      <div class="serba-13k-header">
+        <div class="serba-13k-top-tag">
+          <span class="tag-star" aria-hidden="true">✦</span>
+          <span>PILIHAN FAVORIT MAHASISWA</span>
+          <span class="tag-star" aria-hidden="true">✦</span>
+        </div>
+        <h2 id="headingSerba13k" class="serba-13k-title">Menu Serba 13K</h2>
+        <div class="serba-13k-divider" aria-hidden="true">
+          <span class="div-line"></span>
+          <span class="div-ornament">🎄 ✦ 🔔</span>
+          <span class="div-line"></span>
+        </div>
+        <p class="serba-13k-sub">
+          Nikmati aneka pilihan camilan gurih dan manis lezat dengan satu harga hemat: <strong>Rp 13.000 per porsi</strong>!
+        </p>
+        <div class="serba-13k-feature-strip">
+          <span class="feat-pill">🥟 Tahu Kocek</span>
+          <span class="feat-pill">🍤 Udang Rambutan</span>
+          <span class="feat-pill">🍜 Samyang Roll</span>
+          <span class="feat-pill">🍌 Pisang Coklat</span>
+          <span class="feat-pill">🧀 Cheeseroll</span>
+          <span class="feat-pill">🥗 Salad Buah</span>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        ${items13k.map(renderFoodCard).join("")}
+      </div>
+    </section>
+
+    <!-- ================= MENU SPESIAL LAINNYA ================= -->
+    <section class="other-menu-section" id="otherMenuSection" aria-labelledby="headingOtherMenu">
+      <div class="other-menu-header">
+        <div class="other-menu-top-tag">
+          <span class="tag-star" aria-hidden="true">✦</span>
+          <span>ANEKA KULINER LAINNYA</span>
+          <span class="tag-star" aria-hidden="true">✦</span>
+        </div>
+        <h2 id="headingOtherMenu" class="other-menu-title">Menu Spesial Lainnya</h2>
+        <div class="other-menu-divider" aria-hidden="true">
+          <span class="div-line"></span>
+          <span class="div-ornament">❄️ ✦ 🎁</span>
+          <span class="div-line"></span>
+        </div>
+        <p class="other-menu-sub">
+          Pilihan camilan dan dessert lezat dengan aneka varian rasa istimewa (Rp 7.000 - Rp 16.000).
+        </p>
+      </div>
+
+      <div class="menu-grid">
+        ${otherItems.map(renderFoodCard).join("")}
+      </div>
+    </section>
+  `;
 }
 
 // ================= MODAL: MENU DETAIL & VARIANTS =================
@@ -579,6 +741,26 @@ function setupEventListeners() {
   if (deliveryAlert) {
     deliveryAlert.addEventListener("click", () => {
       showToast("🚚 Pengiriman serentak: Jumat, 23 Oktober 2026 di Kampus IIK Bhakta!");
+    });
+  }
+
+  // Tombol Pintas & Banner Promo Serba 13K
+  const btnScroll13k = document.getElementById("btnScroll13k");
+  if (btnScroll13k) {
+    btnScroll13k.addEventListener("click", (e) => {
+      // Jika kategori aktif bukan "all" dan bukan "13k", ganti ke "all" atau "13k"
+      if (activeCategory !== "all" && activeCategory !== "13k") {
+        const tab13k = document.querySelector('.cat-tab[data-category="13k"]');
+        if (tab13k) {
+          tab13k.click();
+        }
+      }
+      const targetSec = document.getElementById("serba13kSection");
+      if (targetSec) {
+        targetSec.scrollIntoView({ behavior: "smooth", block: "start" });
+        targetSec.classList.add("section-highlight-pulse");
+        setTimeout(() => targetSec.classList.remove("section-highlight-pulse"), 1800);
+      }
     });
   }
 }
