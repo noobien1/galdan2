@@ -13,7 +13,8 @@ const MENU_DATA = [
     portion: "Berisi 4 pcs",
     price: 16000,
     priceBadge: "16K",
-    image: "dimsum mentai.jpeg",
+    image: "./dimsum mentai.jpeg",
+    img: "./dimsum mentai.jpeg",
     description: "Dimsum ayam premium bertabur saus mentai creamy khas Jepang yang di-torch dengan aroma smokey menggugah selera, dilengkapi taburan nori renyah.",
     variants: null
   },
@@ -25,7 +26,8 @@ const MENU_DATA = [
     portion: "1 Porsi",
     price: 13000,
     priceBadge: "13K",
-    image: "tahu kocek.jpeg",
+    image: "./tahu kocek.jpeg",
+    img: "./tahu kocek.jpeg",
     description: "Tahu goreng garing di luar lembut di dalam, dikocek bersama ulekan cabai rawit pedas nampol dan bumbu bawang putih gurih sedap khas kuliner favorit kampus.",
     variants: null
   },
@@ -37,7 +39,8 @@ const MENU_DATA = [
     portion: "Berisi 7 pcs",
     price: 13000,
     priceBadge: "13K",
-    image: "pisang coklat.jpeg",
+    image: "./pisang coklat.jpeg",
+    img: "./pisang coklat.jpeg",
     description: "Pisang manis lumer berbalut kulit lumpia super crispy, disiram lelehan cokelat premium manis legit yang melimpah di setiap gigitan.",
     variants: null
   },
@@ -49,7 +52,8 @@ const MENU_DATA = [
     portion: "1 Porsi",
     price: 12000,
     priceBadge: "12K",
-    image: "wonton chili oil.jpeg",
+    image: "./wonton chili oil.jpeg",
+    img: "./wonton chili oil.jpeg",
     description: "Pangsit rebus gurih dengan isian daging ayam padat lembut, disajikan dalam siraman chili oil wangi rempah aromatik pedas nikmat menggigit.",
     variants: null
   },
@@ -61,7 +65,8 @@ const MENU_DATA = [
     portion: "Berisi 4 pcs",
     price: 13000,
     priceBadge: "13K",
-    image: "udang rambutan.jpeg",
+    image: "./udang rambutan.jpeg",
+    img: "./udang rambutan.jpeg",
     description: "Bola-bola udang dan ayam bercita rasa gurih juicy berbalut irisan kulit pangsit kriuk renyah menyerupai buah rambutan, disajikan dengan saus cocolan istimewa.",
     variants: null
   },
@@ -73,7 +78,8 @@ const MENU_DATA = [
     portion: "Berisi 7 pcs",
     price: 13000,
     priceBadge: "13K",
-    image: "cheese roll.jpeg",
+    image: "./cheese roll.jpeg",
+    img: "./cheese roll.jpeg",
     description: "Gulungan stik keju gurih renyah berpadu taburan keju parut melimpah dan saus manis lumer, camilan manis-gurih favorit pencinta keju.",
     variants: null
   },
@@ -85,7 +91,8 @@ const MENU_DATA = [
     portion: "1 Porsi",
     price: 13000,
     priceBadge: "13K",
-    image: "salad.png",
+    image: "./salad.png",
+    img: "./salad.png",
     description: "Potongan buah-buahan segar (anggur, stroberi, jeruk segar) berpadu saus dressing mayo creamy manis dengan limpahan parutan keju cheddar premium.",
     variants: null
   },
@@ -98,7 +105,8 @@ const MENU_DATA = [
     price: 7000,
     priceRange: "7K - 8K",
     priceBadge: "7/8K",
-    image: "chocolate original detailed.jpg",
+    image: "./chocolate original detailed.jpg",
+    img: "./chocolate original detailed.jpg",
     description: "Soft-baked cookie premium bertekstur chewy dan lembut di dalam dengan lelehan butter dan filling pilihan istimewa.",
     variants: [
       {
@@ -106,7 +114,8 @@ const MENU_DATA = [
         name: "Chocolate Original",
         price: 7000,
         priceBadge: "7K",
-        image: "chocolate original detailed.jpg",
+        img: "./chocolate original detailed.jpg",
+        image: "./chocolate original detailed.jpg",
         desc: "Soft-baked cookie klasik dengan lelehan cokelat premium berlimpah yang manis legit."
       },
       {
@@ -114,7 +123,8 @@ const MENU_DATA = [
         name: "Matcha Cheese",
         price: 8000,
         priceBadge: "8K",
-        image: "matcha cheese detailed.jpg",
+        img: "./matcha cheese detailed.jpg",
+        image: "./matcha cheese detailed.jpg",
         desc: "Perpaduan matcha Jepang autentik berpadu aroma keju creamy yang melted lembut."
       },
       {
@@ -122,7 +132,8 @@ const MENU_DATA = [
         name: "Red Velvet Cheese",
         price: 8000,
         priceBadge: "8K",
-        image: "red velvet cheese detailed.jpg",
+        img: "./red velvet cheese detailed.jpg",
+        image: "./red velvet cheese detailed.jpg",
         desc: "Adonan red velvet merah cantik beraroma vanilla-kakao dengan lelehan cream cheese gurih mewah."
       }
     ]
@@ -135,7 +146,8 @@ const MENU_DATA = [
     portion: "Berisi 3 pcs",
     price: 13000,
     priceBadge: "13K",
-    image: "samyang roll new detailed.jpg",
+    image: "./samyang roll new detailed.jpg",
+    img: "./samyang roll new detailed.jpg",
     description: "Mie pedas Samyang berpadu isian gurih yang digulung rapi dengan rice paper kenyal, sensasi pedas gurih nagih ala Korean street food.",
     variants: null
   },
@@ -147,7 +159,8 @@ const MENU_DATA = [
     portion: "1 Porsi (Box)",
     price: 10000,
     priceBadge: "10K",
-    image: "cheesecuit tiramisu.jpg",
+    image: "./cheesecuit tiramisu.jpg",
+    img: "./cheesecuit tiramisu.jpg",
     description: "Dessert box viral dengan biskuit renyah berlapis cream cheese manis gurih lumer di mulut dengan berbagai pilihan varian topping istimewa.",
     variants: [
       {
@@ -155,7 +168,8 @@ const MENU_DATA = [
         name: "Tiramisu",
         price: 10000,
         priceBadge: "10K",
-        image: "cheesecuit tiramisu.jpg",
+        img: "./cheesecuit tiramisu.jpg",
+        image: "./cheesecuit tiramisu.jpg",
         desc: "Biskuit renyah berlapis cream cheese lembut berpadu aroma kopi & taburan bubuk cokelat kakao mewah."
       },
       {
@@ -163,7 +177,8 @@ const MENU_DATA = [
         name: "Oreo",
         price: 10000,
         priceBadge: "10K",
-        image: "cheesecuit oreo.jpg",
+        img: "./cheesecuit oreo.jpg",
+        image: "./cheesecuit oreo.jpg",
         desc: "Lapisan keju creamy lezat berpadu remukan biskuit Oreo crunchy manis legit."
       },
       {
@@ -171,7 +186,8 @@ const MENU_DATA = [
         name: "Matcha",
         price: 10000,
         priceBadge: "10K",
-        image: "cheesecuit matcha.jpg",
+        img: "./cheesecuit matcha.jpg",
+        image: "./cheesecuit matcha.jpg",
         desc: "Sentuhan green tea matcha wangi berpadu krim keju lembut memanjakan lidah."
       },
       {
@@ -179,7 +195,8 @@ const MENU_DATA = [
         name: "Red Velvet",
         price: 10000,
         priceBadge: "10K",
-        image: "cheesecuit redvelvet.jpg",
+        img: "./cheesecuit redvelvet.jpg",
+        image: "./cheesecuit redvelvet.jpg",
         desc: "Biskuit red velvet khas berpadu saus keju lembut yang manis menggoda."
       }
     ]
@@ -205,6 +222,7 @@ let activeCategory = "all";
 let searchQuery = "";
 let currentModalItem = null;
 let currentSelectedVariant = null;
+let modalImageFadeTimeout = null;
 
 // Format Currency
 function formatRupiah(amount) {
@@ -246,6 +264,7 @@ function renderMenuGrid() {
   container.innerHTML = filtered.map(item => {
     const hasVariants = Boolean(item.variants && item.variants.length > 0);
     const displayBadge = item.priceRange || item.priceBadge;
+    const cardImgSrc = item.img || item.image;
     
     // Mini preview of variants if available
     let variantsPreviewHtml = "";
@@ -261,7 +280,7 @@ function renderMenuGrid() {
       <article class="food-card" onclick="openMenuModal('${item.id}')" role="button" tabindex="0" aria-label="Lihat detail ${item.title}">
         
         <div class="food-card-visual">
-          <img src="${item.image}" alt="${item.title}" class="food-card-img" loading="eager">
+          <img src="${cardImgSrc}" alt="${item.title}" class="food-card-img" loading="eager">
           
           <span class="card-price-badge">${displayBadge}</span>
           <span class="card-portion-badge">${item.portion}</span>
@@ -310,32 +329,63 @@ function openMenuModal(itemId) {
   modalPortion.textContent = item.portion;
   portionDetailText.textContent = `Porsi: ${item.portion} • Freshly prepared`;
 
+  // Reset any active fade
+  if (modalImg) {
+    modalImg.classList.remove("fade-out");
+    clearTimeout(modalImageFadeTimeout);
+  }
+
   if (item.variants && item.variants.length > 0) {
     // Select first variant by default
     currentSelectedVariant = item.variants[0];
     variantSection.style.display = "block";
     
-    // Render variant radio pills
-    variantGrid.innerHTML = item.variants.map((v, idx) => `
-      <div class="variant-pill-option ${idx === 0 ? "selected" : ""}" 
-           onclick="selectModalVariant('${v.id}')" 
-           id="varPill_${v.id}"
-           role="radio" 
-           aria-checked="${idx === 0 ? "true" : "false"}"
-           tabindex="0">
+    // Render variant radio pills dynamically with direct event listeners
+    variantGrid.innerHTML = "";
+    item.variants.forEach((v, idx) => {
+      const isSelected = idx === 0;
+      const pill = document.createElement("div");
+      pill.className = `variant-pill-option ${isSelected ? "selected" : ""}`;
+      pill.id = `varPill_${v.id}`;
+      pill.dataset.variantId = v.id;
+      pill.setAttribute("role", "radio");
+      pill.setAttribute("aria-checked", isSelected ? "true" : "false");
+      pill.setAttribute("tabindex", "0");
+      pill.setAttribute("aria-label", `Varian ${v.name}, harga ${formatRupiah(v.price)}`);
+
+      pill.innerHTML = `
         <div class="var-pill-left">
           <div class="var-radio-dot"></div>
           <span class="var-pill-name">${v.name}</span>
         </div>
         <span class="var-pill-price">${formatRupiah(v.price)}</span>
-      </div>
-    `).join("");
+      `;
 
-    updateModalVariantView();
+      // Event listener: click
+      pill.addEventListener("click", () => {
+        selectModalVariant(v.id);
+      });
+
+      // Event listener: keyboard accessibility (Enter / Space)
+      pill.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selectModalVariant(v.id);
+        }
+      });
+
+      variantGrid.appendChild(pill);
+    });
+
+    // Update modal display immediately without fade delay on initial open
+    updateModalVariantView(true);
   } else {
     currentSelectedVariant = null;
     variantSection.style.display = "none";
-    modalImg.src = item.image;
+    variantGrid.innerHTML = "";
+
+    const itemImg = item.img || item.image;
+    modalImg.src = itemImg;
     modalImg.alt = item.title;
     modalPrice.textContent = formatRupiah(item.price);
     modalDesc.textContent = item.description;
@@ -350,23 +400,24 @@ function selectModalVariant(variantId) {
   const variant = currentModalItem.variants.find(v => v.id === variantId);
   if (!variant) return;
 
+  // Don't re-trigger if already selected
+  if (currentSelectedVariant && currentSelectedVariant.id === variant.id) return;
+
   currentSelectedVariant = variant;
 
-  // Update pills visual state
-  document.querySelectorAll(".variant-pill-option").forEach(pill => {
-    pill.classList.remove("selected");
-    pill.setAttribute("aria-checked", "false");
+  // Update pills visual state and ARIA
+  const allPills = document.querySelectorAll(".variant-pill-option");
+  allPills.forEach(pill => {
+    const isThis = pill.dataset.variantId === variantId;
+    pill.classList.toggle("selected", isThis);
+    pill.setAttribute("aria-checked", isThis ? "true" : "false");
   });
-  const selectedPill = document.getElementById(`varPill_${variantId}`);
-  if (selectedPill) {
-    selectedPill.classList.add("selected");
-    selectedPill.setAttribute("aria-checked", "true");
-  }
 
-  updateModalVariantView();
+  // Smooth fade image transition when switching flavor
+  updateModalVariantView(false);
 }
 
-function updateModalVariantView() {
+function updateModalVariantView(isInitial = false) {
   if (!currentSelectedVariant) return;
 
   const modalImg = document.getElementById("modalItemImage");
@@ -374,17 +425,40 @@ function updateModalVariantView() {
   const modalDesc = document.getElementById("modalItemDesc");
   const variantHintText = document.getElementById("variantHintText");
 
-  // Smooth image swap
-  modalImg.style.opacity = "0.4";
-  setTimeout(() => {
-    modalImg.src = currentSelectedVariant.image;
-    modalImg.alt = `${currentModalItem.title} - ${currentSelectedVariant.name}`;
-    modalImg.style.opacity = "1";
-  }, 120);
+  const targetSrc = currentSelectedVariant.img || currentSelectedVariant.image;
+  const targetAlt = `${currentModalItem.title} - ${currentSelectedVariant.name}`;
 
-  modalPrice.textContent = formatRupiah(currentSelectedVariant.price);
-  modalDesc.textContent = currentSelectedVariant.desc || currentModalItem.description;
-  variantHintText.textContent = `Varian aktif: ${currentSelectedVariant.name} (${formatRupiah(currentSelectedVariant.price)})`;
+  if (modalImg) {
+    if (isInitial) {
+      // Direct load on modal open without initial fade
+      modalImg.src = targetSrc;
+      modalImg.alt = targetAlt;
+      modalImg.classList.remove("fade-out");
+    } else {
+      // Gentle fade transition when user switches flavor
+      modalImg.classList.add("fade-out");
+      clearTimeout(modalImageFadeTimeout);
+
+      modalImageFadeTimeout = setTimeout(() => {
+        modalImg.src = targetSrc;
+        modalImg.alt = targetAlt;
+        // Fade back in smoothly
+        requestAnimationFrame(() => {
+          modalImg.classList.remove("fade-out");
+        });
+      }, 120);
+    }
+  }
+
+  if (modalPrice) {
+    modalPrice.textContent = formatRupiah(currentSelectedVariant.price);
+  }
+  if (modalDesc) {
+    modalDesc.textContent = currentSelectedVariant.desc || currentModalItem.description;
+  }
+  if (variantHintText) {
+    variantHintText.textContent = `Varian aktif: ${currentSelectedVariant.name} (${formatRupiah(currentSelectedVariant.price)})`;
+  }
 }
 
 function closeMenuModal() {
@@ -457,10 +531,31 @@ function setupEventListeners() {
   }
 
   // Modal controls
-  document.getElementById("closeMenuModalBtn").addEventListener("click", closeMenuModal);
-  document.getElementById("menuModalBackdrop").addEventListener("click", (e) => {
-    if (e.target.id === "menuModalBackdrop") closeMenuModal();
-  });
+  const closeBtn = document.getElementById("closeMenuModalBtn");
+  if (closeBtn) closeBtn.addEventListener("click", closeMenuModal);
+
+  const modalBackdrop = document.getElementById("menuModalBackdrop");
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", (e) => {
+      if (e.target.id === "menuModalBackdrop") closeMenuModal();
+    });
+  }
+
+  // Variant Grid Event Delegation (click & change listener for maximum compatibility)
+  const variantGrid = document.getElementById("variantOptionsGrid");
+  if (variantGrid) {
+    variantGrid.addEventListener("click", (e) => {
+      const pill = e.target.closest(".variant-pill-option");
+      if (pill && pill.dataset.variantId) {
+        selectModalVariant(pill.dataset.variantId);
+      }
+    });
+    variantGrid.addEventListener("change", (e) => {
+      if (e.target && e.target.value) {
+        selectModalVariant(e.target.value);
+      }
+    });
+  }
 
   // Direct WA buttons inside modal
   const modalMariaBtn = document.getElementById("modalOrderMariaBtn");
@@ -684,4 +779,10 @@ function initChristmasMusic() {
     });
   }
 }
+
+// Global exports for backwards compatibility & inline handlers
+window.openMenuModal = openMenuModal;
+window.closeMenuModal = closeMenuModal;
+window.selectModalVariant = selectModalVariant;
+window.MENU_DATA = MENU_DATA;
 
